@@ -1,38 +1,245 @@
+
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>Учебный проект по веб-разработке</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
 
-  <body>
-    <h1>Пример сайта на GitHub Pages</h1>
-    <img src="images/firefox-icon.png" alt="The Firefox logo: a flaming fox surrounding the Earth.">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Демонстрационный проект по веб-разработке, HTML, Git и GitHub.">
 
+  <title>Веб-разработка на практике — HTML, Git и GitHub</title>
+</head>
+
+<body>
+
+  <!-- Шапка сайта -->
+  <header>
+    <h1>Веб-разработка на практике</h1>
+    <p>
+      Демонстрационный проект по работе с HTML,
+      Git, GitHub и Visual Studio Code.
+    </p>
+  </header>
+
+  <!-- Основное содержимое -->
+  <main>
+
+    <!-- Раздел 1 -->
     <section>
-    <h2>О проекте</h2>
-    <p>Этот сайт используется для изучения Git и GitHub.</p>
+      <h2>О проекте</h2>
+
+      <p>
+        Этот сайт создан для демонстрации современных
+        инструментов веб-разработки и системы
+        контроля версий Git.
+      </p>
+
+      <p>
+        Проект позволяет изучить основные этапы
+        разработки веб-сайта: создание HTML-страницы,
+        изменение исходного кода, сохранение истории
+        изменений и публикацию в интернете.
+      </p>
     </section>
 
-    <p>At Mozilla, we’re a global community of</p>
+    <!-- Раздел 2 -->
+    <section>
+      <h2>Знакомство с Mozilla</h2>
 
-    <ul> <!-- changed to list in the tutorial -->
-      <li>technologists</li>
-      <li>thinkers</li>
-      <li>builders</li>
-    </ul>
+      <img
+        src="images/firefox-icon.png"
+        alt="Логотип браузера Mozilla Firefox"
+        width="180"
+      >
 
-    <p>working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. 
-      We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
+      <p>
+        Mozilla — международное сообщество, которое
+        занимается развитием открытых веб-технологий
+        и поддержкой доступного интернета.
+      </p>
 
-    <p>Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a> 
-      to learn even more about the values and principles that guide the pursuit of our mission.</p>
-    <p>Мой проект.</p>
-    <footer>
+      <p>В сообщество Mozilla входят:</p>
+
+      <ul>
+        <li>разработчики программного обеспечения;</li>
+        <li>специалисты в области информационных технологий;</li>
+        <li>исследователи;</li>
+        <li>сторонники открытых веб-стандартов.</li>
+      </ul>
+
+      <p>
+        Участники сообщества работают над развитием
+        технологий, которые помогают сделать интернет
+        открытым, безопасным и доступным.
+      </p>
+
+      <p>
+        Подробнее:
+        <a href="https://www.mozilla.org/ru/about/manifesto/"
+           target="_blank"
+           rel="noopener noreferrer">
+          Манифест Mozilla
+        </a>.
+      </p>
+    </section>
+
+    <!-- Раздел 3 -->
+    <section>
+      <h2>Инструменты веб-разработчика</h2>
+
+      <p>
+        Для разработки и публикации проекта
+        используются следующие технологии:
+      </p>
+
+      <ol>
+        <li>
+          <strong>HTML</strong> — язык разметки,
+          определяющий структуру веб-страницы.
+        </li>
+
+        <li>
+          <strong>Visual Studio Code</strong> —
+          редактор исходного кода.
+        </li>
+
+        <li>
+          <strong>Git</strong> — распределённая
+          система контроля версий.
+        </li>
+
+        <li>
+          <strong>GitHub</strong> — платформа
+          для размещения Git-репозиториев
+          и совместной разработки.
+        </li>
+
+        <li>
+          <strong>GitHub Pages</strong> —
+          сервис публикации статических веб-сайтов.
+        </li>
+      </ol>
+    </section>
+
+    <!-- Раздел 4 -->
+    <section>
+      <h2>Работа с Git и GitHub</h2>
+
+      <p>
+        Git позволяет отслеживать изменения
+        в исходном коде, создавать отдельные ветки
+        разработки и объединять результаты работы.
+      </p>
+
+      <h3>Основные операции Git</h3>
+
+      <ul>
+        <li>
+          <strong>Clone</strong> — создание локальной
+          копии удалённого репозитория.
+        </li>
+
+        <li>
+          <strong>Commit</strong> — сохранение
+          изменений в локальной истории проекта.
+        </li>
+
+        <li>
+          <strong>Branch</strong> — создание
+          отдельной ветки разработки.
+        </li>
+
+        <li>
+          <strong>Merge</strong> — объединение
+          изменений из разных веток.
+        </li>
+
+        <li>
+          <strong>Push</strong> — отправка
+          локальных коммитов в удалённый репозиторий.
+        </li>
+
+        <li>
+          <strong>Pull</strong> — получение
+          изменений из удалённого репозитория
+          и их интеграция в текущую ветку.
+        </li>
+      </ul>
+
+      <h3>Совместная разработка</h3>
+
+      <p>
+        GitHub позволяет организовать командную
+        работу над проектом. Разработчики могут
+        создавать копии репозиториев, предлагать
+        изменения через Pull Request, просматривать
+        код и обсуждать результаты работы.
+      </p>
+    </section>
+
+    <!-- Раздел 5 -->
+    <section>
+      <h2>Этапы разработки проекта</h2>
+
+      <p>
+        При подготовке демонстрационного проекта
+        были выполнены следующие действия:
+      </p>
+
+      <ol>
+        <li>Создана копия открытого репозитория (Fork).</li>
+        <li>Репозиторий клонирован в Visual Studio Code.</li>
+        <li>Изменён исходный HTML-код страницы.</li>
+        <li>Созданы коммиты с описанием изменений.</li>
+        <li>Созданы отдельные ветки разработки.</li>
+        <li>Выполнено объединение веток (Merge).</li>
+        <li>Создан и объединён Pull Request.</li>
+        <li>Сайт опубликован через GitHub Pages.</li>
+      </ol>
+    </section>
+
+    <!-- Раздел 6 -->
+    <section>
+      <h2>Репозиторий проекта</h2>
+
+      <p>
+        Исходный код демонстрационного проекта
+        доступен в открытом репозитории GitHub.
+      </p>
+
+      <p>
+        <a href="https://github.com/DNKlyosov/beginner-html-site"
+           target="_blank"
+           rel="noopener noreferrer">
+          Открыть репозиторий на GitHub
+        </a>
+      </p>
+
+      <p>
+        История коммитов позволяет проследить,
+        как проект изменялся в процессе разработки.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Подвал сайта -->
+  <footer>
     <hr>
-    <p>Учебный проект по веб-разработке</p>
-    <p>Изучаем Git, GitHub и VS Code</p>
-</footer>
-  </body>
+
+    <p>
+      Демонстрационный проект по веб-разработке
+    </p>
+
+    <p>
+      HTML · Git · GitHub · Visual Studio Code
+    </p>
+
+    <p>
+      2026 год
+    </p>
+  </footer>
+
+</body>
 </html>
