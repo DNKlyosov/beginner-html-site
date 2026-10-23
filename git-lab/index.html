@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивный учебник Git: команды, визуальный симулятор, задачи и контроль знаний.">
+  <meta name="theme-color" content="#101d38">
+  <title>Git Практикум — интерактивный учебник</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#home" aria-label="Git Практикум — на главную"><span class="brand-symbol" aria-hidden="true">⌁</span><span>git<span class="brand-thin">/практикум</span></span></a>
+    <nav aria-label="Разделы" class="top-nav"><a href="#learning">Маршрут</a><a href="#simulator">Тренажёр</a><a href="#commands">Команды</a><a href="#quiz">Проверка</a></nav>
+    <button class="icon-button" id="themeToggle" type="button" aria-label="Переключить тему" title="Переключить тему">☾</button>
+  </div>
+</header>
+<main id="main">
+  <section id="home" class="hero section-shell" aria-labelledby="heroTitle">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="status-dot"></span> ОТ НУЛЯ ДО УВЕРЕННОЙ РАБОТЫ</div>
+      <h1 id="heroTitle">Git понятнее,<br><span>когда видишь,</span><br>что происходит.</h1>
+      <p class="lead">Не просто заучивайте команды. Наблюдайте изменения в рабочей папке, индексе, истории коммитов и удалённом репозитории.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#simulator">Запустить симулятор <span aria-hidden="true">↗</span></a><a class="btn btn-light" href="#learning">Смотреть программу</a></div>
+      <div class="hero-meta"><span>✓ Без регистрации</span><span>✓ Работает в браузере</span><span>✓ Русский интерфейс</span></div>
+    </div>
+    <div class="hero-demo" role="img" aria-label="Схема Git: рабочая папка, индекс, локальная история и удалённый репозиторий">
+      <div class="window-bar"><i></i><i></i><i></i><span>git status</span></div>
+      <div class="terminal-window"><div><span class="prompt">$</span> git status</div><p>On branch main</p><p class="terminal-green">Changes to be committed:</p><p class="terminal-green padded">modified: index.html</p><div class="terminal-divider"></div><div><span class="prompt">$</span> git commit -m "Добавлен заголовок"</div><p class="terminal-muted">[main a13d9f2] Добавлен заголовок</p></div>
+      <div class="hero-flow"><div><small>01</small><strong>Рабочая папка</strong><code>index.html</code></div><span>→</span><div><small>02</small><strong>Индекс</strong><code>git add</code></div><span>→</span><div><small>03</small><strong>Коммит</strong><code>git commit</code></div></div>
+    </div>
+  </section>
+  <section id="learning" class="section-shell space-top" aria-labelledby="learningTitle">
+    <div class="section-head"><div><p class="section-kicker">01 / СТРУКТУРА КУРСА</p><h2 id="learningTitle">Последовательный маршрут</h2><p>От подготовки окружения до диагностики сложной истории.</p></div><div class="progress-summary"><strong id="progressPercent">0%</strong><span>освоено</span></div></div>
+    <div class="course-grid" id="courseGrid"></div>
+    <p class="subtle-note">Каждый модуль связан с командами справочника. Отмеченные темы сохраняются в вашем браузере; при подключении API их можно синхронизировать с сервером.</p>
+  </section>
+  <section id="simulator" class="section-shell space-top" aria-labelledby="simTitle">
+    <div class="section-head"><div><p class="section-kicker">02 / ИНТЕРАКТИВНАЯ ПРАКТИКА</p><h2 id="simTitle">Что происходит внутри Git</h2><p>Наглядная учебная модель: нажимайте следующий шаг и следите за состояниями.</p></div><span class="label-live">ИНТЕРАКТИВНЫЙ РЕЖИМ</span></div>
+    <div class="sim-grid">
+      <div class="panel sim-control"><div class="panel-top"><span class="step-badge" id="simStep">ШАГ 0 / 12</span><button id="simReset" class="text-button" type="button">↺ С начала</button></div><h3 id="simHeading">Репозиторий ещё не создан</h3><p class="explain" id="simExplain">Начните с git init: эта команда создаст каталог .git для хранения истории и настроек репозитория.</p><div class="command-box"><span>$</span><code id="simCommand">git init</code><button id="copySim" type="button" aria-label="Копировать текущую команду">Копировать</button></div><button id="simNext" class="btn btn-primary sim-next" type="button">Выполнить следующий шаг →</button><p class="tiny-note">Это визуальная модель, не настоящий терминал и не выполнение команд на вашем компьютере.</p></div>
+      <div class="panel sim-display"><div class="model-title">СОСТОЯНИЕ ПРОЕКТА <span id="simBranch">ветка: main</span></div><div class="zones"><div class="zone" id="zoneWork"><div class="zone-icon">✎</div><strong>Рабочая папка</strong><small>Working directory</small><div class="zone-value" id="zoneWorkValue">Нет проекта</div></div><div class="zone-arrow">→</div><div class="zone" id="zoneStage"><div class="zone-icon">＋</div><strong>Индекс</strong><small>Staging area</small><div class="zone-value" id="zoneStageValue">Пуст</div></div><div class="zone-arrow">→</div><div class="zone" id="zoneHistory"><div class="zone-icon">◆</div><strong>История</strong><small>Local repository</small><div class="zone-value" id="zoneHistoryValue">Нет коммитов</div></div></div><div class="history-caption">История коммитов (модель)</div><div id="simGraph" class="graph-line" aria-live="polite">Пока нет коммитов</div><div class="remote-status"><span>☁ Удалённый репозиторий</span><strong id="remoteValue">Не подключён</strong></div></div>
+    </div>
+    <div class="concept-grid"><article><span>01</span><h3>Рабочая папка</h3><p>То, что вы редактируете в VS Code. Изменения ещё не обязательно попадут в коммит.</p></article><article><span>02</span><h3>Индекс</h3><p>Подготовленный набор изменений для следующего снимка проекта.</p></article><article><span>03</span><h3>История</h3><p>Локальные коммиты, связанные родительскими отношениями и указателями веток.</p></article></div>
+  </section>
+  <section id="commands" class="section-shell space-top" aria-labelledby="commandsTitle"><div class="section-head"><div><p class="section-kicker">03 / ЭНЦИКЛОПЕДИЯ КОМАНД</p><h2 id="commandsTitle">Команды от простых до редких</h2><p>Синтаксис, назначение, примеры, предостережения и ссылки на официальную документацию.</p></div><div class="catalog-count"><strong id="commandCount">—</strong><span>команд в справочнике</span></div></div><div class="catalog-controls"><label class="search-wrap"><span aria-hidden="true">⌕</span><span class="sr-only">Найти команду Git</span><input type="search" id="commandSearch" placeholder="Например: rebase, stash, reflog…" autocomplete="off"></label><select id="categoryFilter" aria-label="Категория команд"><option value="all">Все категории</option></select><select id="levelFilter" aria-label="Уровень сложности"><option value="all">Любая сложность</option><option value="basic">Базовый</option><option value="advanced">Продвинутый</option><option value="expert">Экспертный</option></select></div><div class="command-grid" id="commandGrid"></div><div class="catalog-footer"><button type="button" id="showMore" class="btn btn-light">Показать ещё</button><p id="catalogMessage" aria-live="polite"></p></div></section>
+  <section id="backend" class="section-shell space-top" aria-labelledby="backendTitle"><div class="backend-section"><div><p class="section-kicker">04 / ПРОЕКТИРОВАНИЕ СИСТЕМ</p><h2 id="backendTitle">Настоящий frontend + backend</h2><p>Этот учебник одновременно иллюстрирует клиент-серверную архитектуру. Интерфейс доступен на GitHub Pages; API для сохранения прогресса работает на FastAPI, используя SQLite.</p><div class="backend-status" id="apiStatus" role="status">Локальный режим: данные сохраняются в браузере.</div><form id="apiForm" class="api-form"><label for="apiInput">Адрес API (необязательно)</label><div><input id="apiInput" placeholder="http://127.0.0.1:8000" type="url"><button class="btn btn-primary" type="submit">Подключить</button></div></form><p class="tiny-note">Для сайта на HTTPS сервер тоже должен использовать HTTPS. Без API тренажёр и справочник продолжат работать.</p></div><div class="arch-diagram"><div class="arch-node"><span>FRONTEND</span><strong>HTML · CSS · JS</strong><small>GitHub Pages</small></div><div class="arch-link">HTTP/JSON <span>↓ ↑</span></div><div class="arch-node"><span>BACKEND</span><strong>FastAPI</strong><small>REST API + валидация</small></div><div class="arch-link">SQL <span>↓ ↑</span></div><div class="arch-node"><span>DATA</span><strong>SQLite</strong><small>Прогресс обучающихся</small></div></div></div></section>
+  <section id="quiz" class="section-shell space-top" aria-labelledby="quizTitle"><div class="section-head"><div><p class="section-kicker">05 / САМОПРОВЕРКА</p><h2 id="quizTitle">Проверьте понимание</h2><p>Короткий тест с объяснением ответов и подсчётом результата.</p></div></div><div class="quiz-layout"><div class="panel quiz-card" id="quizCard"><span class="step-badge" id="quizStep">ВОПРОС 1 / 6</span><h3 id="quizQuestion"></h3><div id="quizAnswers" class="answer-options"></div><p id="quizFeedback" aria-live="polite" class="quiz-feedback"></p><button id="quizNext" type="button" class="btn btn-primary" disabled>Далее →</button></div><aside class="tip-card"><span>НЕ ЗНАЕТЕ ОТВЕТ?</span><h3>Главное — понимать модель</h3><p>Запомните последовательность: изменить файл → выбрать изменения → создать коммит → опубликовать его.</p><div class="mini-steps"><code>edit</code><span>→</span><code>add</code><span>→</span><code>commit</code><span>→</span><code>push</code></div></aside></div></section>
+</main><footer class="footer"><div class="section-shell footer-inner"><div><strong>git/практикум</strong><p>Учебный проект по веб-разработке и Git.</p></div><div><a href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer">Официальная документация ↗</a><p>Учебная модель не выполняет реальные Git-команды.</p></div></div></footer>
+</body>
+</html>
